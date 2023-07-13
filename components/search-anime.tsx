@@ -1,16 +1,19 @@
 'use client'
+
 import { useState } from 'react'
-import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 
 export default function SearchAnime() {
     const router = useRouter()
-    const pathname = usePathname()
-    const [searchQuery, setSearchQuery] = useState('')
+    const searchParams = useSearchParams()
+    const search = searchParams.get('q') // for default value
+    const [searchQuery, setSearchQuery] = useState(search)
+
 
     function updateSearchQuery(e: any) {
         if (e.key === 'Enter') {
             const query = searchQuery ? `?q=${searchQuery}` : ''
-            router.push(`${pathname}${query}`)
+            router.push(`/${query}`)
         }
     }
 
@@ -18,6 +21,7 @@ export default function SearchAnime() {
         <input
             type="text"
             className="p-1 border-gray-300 border rounded"
+            defaultValue={searchQuery || ''}
             onChange={(e) => setSearchQuery(e.target.value)}
             onKeyDown={(e) => updateSearchQuery(e)}
         />

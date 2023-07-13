@@ -1,24 +1,9 @@
-export default function ListAnime() {
+export default function ListAnime({ items }: any) {
     return (
         <ul>
-            <li>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia,
-                ex. Ratione ex, in voluptas magni facilis culpa vero odit minima
-                delectus quis sit debitis, eveniet eligendi molestias
-                repudiandae quisquam ipsam.
-            </li>
-            <li>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia,
-                ex. Ratione ex, in voluptas magni facilis culpa vero odit minima
-                delectus quis sit debitis, eveniet eligendi molestias
-                repudiandae quisquam ipsam.
-            </li>
-            <li>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia,
-                ex. Ratione ex, in voluptas magni facilis culpa vero odit minima
-                delectus quis sit debitis, eveniet eligendi molestias
-                repudiandae quisquam ipsam.
-            </li>
+            {items.data.map((item: any) => {
+                return <li key={item.mal_id}>{item.title}</li>
+            })}
         </ul>
     )
 }

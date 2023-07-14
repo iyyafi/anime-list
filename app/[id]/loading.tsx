@@ -1,3 +1,5 @@
+import { AnimeCardDetailSkeleton } from '@/components/anime-card-detail'
+
 export default function LoadingDetail() {
-    return <div>Loading detail data...</div>
+    return <AnimeCardDetailSkeleton />
 }

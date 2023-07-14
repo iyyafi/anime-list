@@ -1,8 +1,8 @@
 import SearchAnime from '@/components/search-anime'
-import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import Container from './container'
+import ChackraProv from './chackraProv'
+import { Box, Container } from '@chakra-ui/react'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,10 +19,10 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={inter.className}>
-                <Container>
+                <ChackraProv>
                     <SearchAnime />
                     {children}
-                </Container>
+                </ChackraProv>
             </body>
         </html>
     )

@@ -59,6 +59,7 @@ export default function SearchAnime() {
                     ) : null}
                     <InputGroup size="md">
                         <Input
+                            autoFocus={true}
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
                             onKeyDown={(e) => updateSearchQuery(e)}

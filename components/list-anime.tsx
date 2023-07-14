@@ -1,6 +1,13 @@
 'use client'
 
-import { Box, Flex, IconButton, StackDivider, VStack } from '@chakra-ui/react'
+import {
+    Box,
+    Flex,
+    IconButton,
+    StackDivider,
+    VStack,
+    Text,
+} from '@chakra-ui/react'
 import { ArrowForwardIcon, ArrowBackIcon } from '@chakra-ui/icons'
 import { useRouter, useSearchParams } from 'next/navigation'
 import useSWR from 'swr'
@@ -64,6 +71,7 @@ export default function ListAnime() {
             )}
             <Flex
                 justify={'space-between'}
+                align={'center'}
                 w={'100%'}
                 bg={'white'}
                 position={'sticky'}
@@ -78,6 +86,13 @@ export default function ListAnime() {
                             icon={<ArrowBackIcon />}
                             onClick={handlePrevPage}
                         />
+                    ) : null}
+                </Box>
+                <Box>
+                    {animeList?.pagination?.items?.total ? (
+                        <Text textAlign={'right'} fontSize={'xs'}>
+                            Got Result: {animeList?.pagination?.items?.total}
+                        </Text>
                     ) : null}
                 </Box>
                 <Box>

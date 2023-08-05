@@ -2,7 +2,7 @@ import SearchAnime from '@/components/search-anime'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import ChackraProv from './chackraProv'
-import { Box, Container } from '@chakra-ui/react'
+import { Analytics } from '@vercel/analytics/react'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,6 +23,7 @@ export default function RootLayout({
                     <SearchAnime />
                     {children}
                 </ChackraProv>
+                <Analytics />
             </body>
         </html>
     )

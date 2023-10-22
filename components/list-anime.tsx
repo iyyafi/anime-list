@@ -16,7 +16,7 @@ import { LIST_PAGE } from '@/constants/list-page'
 import {
     AnimeListSchemaType,
     DataEntityShemaType,
-    animeListShema,
+    animeListSchema,
 } from '@/types/anime-list-schema'
 
 const fetcher = (url: string) => fetch(url).then((r) => r.json())
@@ -36,7 +36,7 @@ export default function ListAnime() {
         fetcher
     )
 
-    const validateAnimeList = animeListShema.safeParse(animeList)
+    const validateAnimeList = animeListSchema.safeParse(animeList)
     if (!isLoading && !validateAnimeList.success) {
         console.error(validateAnimeList.error)
         return

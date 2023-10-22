@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-export const dataEntityShema = z.object({
+export const dataEntitySchema = z.object({
     mal_id: z.number(),
     images: z.object({
         webp: z.object({
@@ -16,8 +16,8 @@ export const dataEntityShema = z.object({
         .nullable(),
 })
 
-export const animeListShema = z.object({
-    data: z.array(dataEntityShema),
+export const animeListSchema = z.object({
+    data: z.array(dataEntitySchema),
     pagination: z.object({
         has_next_page: z.boolean(),
         items: z.object({
@@ -26,5 +26,5 @@ export const animeListShema = z.object({
     }),
 })
 
-export type DataEntityShemaType = z.infer<typeof dataEntityShema>
-export type AnimeListSchemaType = z.infer<typeof animeListShema>
+export type DataEntityShemaType = z.infer<typeof dataEntitySchema>
+export type AnimeListSchemaType = z.infer<typeof animeListSchema>

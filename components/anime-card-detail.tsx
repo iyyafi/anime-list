@@ -10,11 +10,15 @@ import {
     Text,
     VStack,
 } from '@chakra-ui/react'
-import { Data } from '@/types/anime-detail-response'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import Link from 'next/link'
+import { AnimeDetailSchema } from '@/types/anime-detail-schema'
 
-export default function AnimeCardDetail({ anime }: { anime: Data }) {
+export default function AnimeCardDetail({
+    anime,
+}: {
+    anime: AnimeDetailSchema
+}) {
     return (
         <VStack w={'100%'} py={2} align={'flex-start'} spacing={4}>
             <HStack align={'flex-start'} w={'100%'} spacing={4}>

@@ -11,13 +11,13 @@ import {
     Text,
     VStack,
 } from '@chakra-ui/react'
-import { DataEntity } from '@/types/anime-response'
+import { DataEntityShemaType } from '@/types/anime-list-schema'
 
 export default function AnimeCard({
     anime,
     search,
 }: {
-    anime: DataEntity
+    anime: DataEntityShemaType
     search: string
 }) {
     return (
